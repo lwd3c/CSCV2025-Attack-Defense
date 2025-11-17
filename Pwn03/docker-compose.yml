@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  icon_storage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: icon_storage
+    restart: always
+    ports:
+      - "3636:3636"
+    volumes:
+      - /flag.txt:/tmp/storage/admin/flag.txt
+    env_file:
+      - .env
